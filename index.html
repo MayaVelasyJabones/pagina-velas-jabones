@@ -1,123 +1,192 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | Maya Velas y Jabones Artesanales</title>
-    <style>
-        /* -------------------------------------- */
-        /* CSS: Estilos de la página */
-        /* -------------------------------------- */
-        :root {
-            /* Variables de color para fácil ajuste */
-            --color-principal: #6c5a4d; /* Un marrón suave, como tierra o cera */
-            --color-acento: #f0e8d9; /* Un crema o beige claro, como la espuma */
-            --color-fondo: #ffffff; /* Blanco limpio */
-            --color-texto: #333333;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto y Productos | Maya Velas y Jabones Artesanales</title>
+    <style>
+        /* -------------------------------------- */
+        /* CSS: Estilos Globales y Variables de Color */
+        /* -------------------------------------- */
+        :root {
+            /* Colores de tu paleta: */
+            --color-principal: #45453B; /* Títulos, botón principal, acentos */
+            --color-acento: #B7B2AB;    /* Fondo del contenedor principal */
+            --color-fondo: #CFCDC8;     /* Fondo de la página web */
+            --color-texto: #211E0F;     /* Texto principal para buena legibilidad */
+            --color-claro: #EFEBDF;     /* Un color claro para fondos internos */
+        }
 
-        body {
-            font-family: 'Georgia', serif; /* Una fuente elegante y atemporal */
-            background-color: var(--color-fondo);
-            color: var(--color-texto);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+        body {
+            font-family: 'Georgia', serif; 
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-        .contenedor {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: var(--color-acento);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+        .contenedor {
+            max-width: 900px; /* Aumentamos el ancho para que quepa la galería */
+            margin: 50px auto;
+            padding: 40px;
+            background-color: var(--color-acento);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-        h1 {
-            text-align: center;
-            color: var(--color-principal);
-            border-bottom: 2px solid var(--color-principal);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
+        h1 {
+            text-align: center;
+            color: var(--color-principal);
+            border-bottom: 2px solid var(--color-principal);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        /* -------------------------------------- */
+        /* Estilos de la Galería de Productos */
+        /* -------------------------------------- */
+        h2 {
+            text-align: center;
+            color: var(--color-principal);
+            margin-top: 40px;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
 
-        p {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
+        .galeria {
+            display: grid; /* Usamos CSS Grid para organizar los productos */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Crea columnas responsivas */
+            gap: 20px; /* Espacio entre los productos */
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
 
-        /* Estilos del Formulario */
-        .formulario-grupo {
-            margin-bottom: 15px;
-        }
+        .producto {
+            background-color: var(--color-claro); /* Usa el color más claro para el fondo del producto */
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: var(--color-principal);
-        }
+        .producto img {
+            width: 100%; 
+            max-height: 200px;
+            object-fit: cover; 
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
 
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #cccccc;
-            border-radius: 5px;
-            box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
-            font-size: 1em;
-        }
+        .producto h3 {
+            color: var(--color-principal);
+            margin: 5px 0 10px 0;
+            font-size: 1.2em;
+        }
 
-        textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
+        .producto p.descripcion {
+            text-align: center;
+            font-size: 0.9em;
+            color: var(--color-texto);
+            margin-bottom: 5px;
+        }
+        
+        /* -------------------------------------- */
+        /* Estilos del Formulario de Contacto */
+        /* -------------------------------------- */
+        .formulario-grupo {
+            margin-bottom: 15px;
+        }
 
-        button[type="submit"] {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            background-color: var(--color-principal);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--color-principal);
+        }
 
-        button[type="submit"]:hover {
-            background-color: #4a3e36; /* Un tono más oscuro al pasar el ratón */
-        }
-        /* -------------------------------------- */
-    </style>
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #949286; /* Usamos un gris de tu paleta para el borde */
+            border-radius: 5px;
+            box-sizing: border-box; 
+            font-size: 1em;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: var(--color-principal);
+            color: var(--color-claro); /* Texto claro en el botón oscuro */
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #211E0F; /* Un tono más oscuro de la paleta al pasar el ratón */
+        }
+    </style>
 </head>
 <body>
-    <div class="contenedor">
-        <h1> Maya Velas y Jabones Artesanales</h1>
-        
-        <p>¡Hola! Estamos encantados de que te contactes. Usa el siguiente formulario para hacer un pedido, consultar sobre personalización o cualquier otra pregunta que tengas. Te responderemos lo antes posible.</p>
+    <div class="contenedor">
+        <h1>Maya Velas y Jabones Artesanales</h1>
+        
+        <p style="text-align: center; font-size: 1.1em; margin-bottom: 40px;">Productos hechos a mano con ingredientes naturales y mucho amor.</p>
 
-                <form action="https://formspree.io/f/xldorrbr" method="POST">
-            <div class="formulario-grupo">
-                <label for="nombre">Nombre Completo:</label>
-                <input type="text" id="nombre" name="Nombre" required>
-            </div>
+        <h2>Nuestros Productos Artesanales</h2>
+        <div class="galeria">
+            <div class="producto">
+                <img src="ruta/a/vela1.jpg" alt="Velas Aromáticas de Maya Velas"> 
+                <h3>Velas de Soya "Relajación"</h3>
+                <p class="descripcion">Aromas naturales de Cempasuchil y Copal. Ideal para meditar.</p>
+            </div>
 
-            <div class="formulario-grupo">
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="_replyto" required>
-            </div>
+            <div class="producto">
+                <img src="ruta/a/jabon1.jpg" alt="Jabón Artesanal de Maya Velas">
+                <h3>Jabón de Café y Canela </h3>
+                <p class="descripcion">Hidratación profunda para pieles sensibles. 100% natural.</p>
+            </div>
 
-            <div class="formulario-grupo">
-                <label for="mensaje">Tu Mensaje o Consulta:</label>
-                <textarea id="mensaje" name="Mensaje" required></textarea>
-            </div>
+            <div class="producto">
+                <img src="ruta/a/producto3.jpg" alt="Kit de Regalo Maya Velas">
+                <h3>Kit de Regalo Esencial</h3>
+                <p class="descripcion">Incluye una vela, un jabón y un exfoliante corporal.</p>
+            </div>
 
-            <button type="submit">Enviar Mensaje</button>
-        </form>     </div>
+            </div>
+        <h2 style="margin-top: 40px; padding-top: 20px; border-top: 1px dashed var(--color-principal);">¿Tienes un pedido especial o una pregunta?</h2>
+        <p>Usa el siguiente formulario para contactarnos directamente. Te responderemos lo antes posible.</p>
+
+        <form action="https://formspree.io/f/xldorrbr" method="POST">
+            <div class="formulario-grupo">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="Nombre" required>
+            </div>
+
+            <div class="formulario-grupo">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="_replyto" required>
+            </div>
+
+            <div class="formulario-grupo">
+                <label for="mensaje">Tu Mensaje o Consulta:</label>
+                <textarea id="mensaje" name="Mensaje" required></textarea>
+            </div>
+
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </div>
 </body>
 </html>
