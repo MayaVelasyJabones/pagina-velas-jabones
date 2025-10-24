@@ -137,6 +137,35 @@
         button[type="submit"]:hover {
             background-color: #211E0F; /* Un tono más oscuro de la paleta al pasar el ratón */
         }
+/* -------------------------------------- */
+/* Estilos del Pie de Página */
+/* -------------------------------------- */
+footer {
+    background-color: var(--color-principal); /* El color oscuro de tu marca */
+    color: var(--color-claro); /* El color claro del texto */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px; /* Separación de la galería y el formulario */
+    border-radius: 0 0 10px 10px; /* Redondeamos las esquinas inferiores para que encaje con el contenedor */
+}
+
+footer p {
+    font-size: 0.9em;
+    margin: 0 0 15px 0; /* Espacio debajo del copyright */
+    color: var(--color-claro); /* Aplicamos el color claro también al párrafo */
+}
+
+.redes-sociales a {
+    color: var(--color-claro); /* Los enlaces son del color claro */
+    text-decoration: none; /* Quitamos el subrayado */
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #CFCDC8; /* Un color ligeramente diferente al pasar el ratón para dar un efecto visual */
+}
     </style>
 </head>
 <body>
@@ -148,19 +177,19 @@
         <h2>Nuestros Productos Artesanales</h2>
         <div class="galeria">
             <div class="producto">
-                <img src="imag/vela1.jpg" alt="Velas Aromáticas de Maya Velas"> 
+                <img src="ruta/a/vela1.jpg" alt="Velas Aromáticas de Maya Velas"> 
                 <h3>Velas de Soya "Relajación"</h3>
                 <p class="descripcion">Aromas naturales de Cempasuchil y Copal. Ideal para meditar.</p>
             </div>
 
             <div class="producto">
-                <img src="imag/jabon1.jpg" alt="Jabón Artesanal de Maya Velas">
+                <img src="ruta/a/jabon1.jpg" alt="Jabón Artesanal de Maya Velas">
                 <h3>Jabón de Café y Canela </h3>
                 <p class="descripcion">Hidratación profunda para pieles sensibles. 100% natural.</p>
             </div>
 
             <div class="producto">
-                <img src="imag/producto3.jpg" alt="Kit de Regalo Maya Velas">
+                <img src="ruta/a/producto3.jpg" alt="Kit de Regalo Maya Velas">
                 <h3>Kit de Regalo Esencial</h3>
                 <p class="descripcion">Incluye una vela, un jabón y un exfoliante corporal.</p>
             </div>
@@ -188,6 +217,13 @@
             <button type="submit">Enviar Mensaje</button>
         </form>
     </div>
-</body>
+<footer>
+        <p>&copy; 2024 Maya Velas y Jabones Artesanales. Todos los derechos reservados.</p>
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/share/16HqDzSAhv/" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/mayavyj2025?igsh=MWxkYXQzMzcza29pNg==" target="_blank">Instagram</a>
+        </div>
+    </footer>
+    </div> 
+</body> 
 </html>
-
